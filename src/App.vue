@@ -1,18 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <router-view  name="nav"></router-view>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-3">
+            <router-view name="left"></router-view>
+          </div>
+          <div class="col-sm-9">
+              <router-view ></router-view>
+              <router-view name="content"></router-view>
+          </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: 'App'
+  , data : function(){
+    return {
+      title : "Home"
+    }
   }
+  , mounted : function(){
+ 
+  }
+
 }
 </script>
 
